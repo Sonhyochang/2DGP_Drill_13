@@ -16,14 +16,14 @@ class FixedBackground:
 
     def draw(self):
         # modify followings
-        self.image.draw(get_canvas_width()//2, get_canvas_height()//2)
+        #self.image.draw(get_canvas_width()//2, get_canvas_height()//2)
         self.image.clip_draw_to_origin(self.window_left,self.window_bottom,self.cw,self.ch,0,0)
         pass
 
     def update(self):
         # fill here
-        self.window_left = clamp(0,int(server.boy.x)-self.cw//2,self.w-self.cw-1)
-        self.window_bottom = clamp(0,int(server.boy.y)-self.ch//2,self.h-self.ch-1)
+        self.window_left = clamp(0,int(server.boy.x) - self.cw // 2,self.w - self.cw - 1)
+        self.window_bottom = clamp(0,int(server.boy.y) - self.ch // 2,self.h - self.ch - 1)
         pass
 
     def handle_event(self, event):
